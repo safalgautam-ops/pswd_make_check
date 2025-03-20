@@ -1,5 +1,6 @@
-#importing regular expressions module for complex matchings
 import re
+import secrets
+import string
 
 #function for finding strength
 def check_pswd_strength(password):
@@ -36,12 +37,27 @@ def check_pswd_strength(password):
         return "Weak"
     else:
         return "Very Weak"
-    
+
+#function for generating passwords
+def password_generator(l):
+    pwd = "".join(secrets.choice(string.ascii_letters+string.digits) for i in range(l))
+    return pwd
+
+#function to store password 
+
 #taking user input
 def main():
+    #password checker
     password = input("Enter your password: ")
     strength = check_pswd_strength(password)
     print (f"Your password strength is {strength}")
+
+    #password generator
+    lengthof_pwd = int(input("Enter the length of password you want to generate of"))
+    generated_pwd = password_generator(lengthof_pwd)
+    print(f"Your password is {generated_pwd}")
+
+
 
 #this runs when executed directly
 if __name__ == "__main__" :
