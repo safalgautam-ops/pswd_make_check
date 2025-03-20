@@ -72,11 +72,12 @@ def main():
     elif (user_input == 2):
     #password storage
         service = input("Enter the service name of password: ")
-        pwd = input("Enter the password to save")
+        pwd = input("Enter the password to save: ")
         pwd_saver(service,pwd)
     
     else:
-        print("Please Enter Correct Number")
+        print("\t Please Enter Correct Number \n")
+        main()
 
 
 #this runs when executed directly
